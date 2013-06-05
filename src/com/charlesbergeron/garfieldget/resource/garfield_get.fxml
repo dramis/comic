@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.charlesbergeron.garfieldget.fx.calendar.SimpleCalendar?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<BorderPane fx:id="root"
+            fx:controller="com.charlesbergeron.garfieldget.Controller"
+            xmlns:fx="http://javafx.com/fxml">
+
+    <!-- Header -->
+    <top>
+        <FlowPane alignment="CENTER_RIGHT">
+            <HBox  styleClass="topButton">
+                <Button text="previous" onAction="#handlePreviousButtonAction" styleClass="buttonPrevious" id="glass-grey"/>
+                <Button text="Today" onAction="#handleTodayButtonAction" styleClass="buttonToday" id="glass-grey"/>
+                <Button text="next" onAction="#handleNextButtonAction" styleClass="buttonNext" id="glass-grey"/>
+                <ComboBox fx:id="comicSelect" styleClass="comicSelect" id="glass-grey"/>
+            </HBox>
+        </FlowPane>
+    </top>
+
+    <!-- Content Area -->
+    <center>
+            <HBox alignment="CENTER" styleClass="imageZone">
+                <ImageView fx:id="image" fitHeight="172" fitWidth="600" pickOnBounds="true" preserveRatio="true" styleClass="imageDisplay">
+                    <effect>
+                        <Reflection fraction="0.1" />
+                    </effect>
+                </ImageView>
+            </HBox>
+     </center>
+
+    <!-- Footer -->
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" styleClass="statusBar">
+            <Text fx:id="currentDateText" styleClass="statusDate"/>
+            <SimpleCalendar fx:id="calendar" styleClass="simplecalendar"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
+
+
